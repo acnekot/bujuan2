@@ -49,7 +49,7 @@ const double _labelsHorizontalMargins = 12.0;
 
 class _AnimatedSliderState extends State<AnimatedSlider> {
   late final _dragBarWidth = widget.barWidth + (_barHorizontalMargins * 2);
-  late final _dragRegion = Size(_dragBarWidth + 20, widget.height);
+  late final _dragRegion = Size(_dragBarWidth + 20, MediaQuery.of(context).size.height);
 
   late final _progressNotifier = ValueNotifier<double>(widget.value);
   late final _overflowingNotifier = ValueNotifier<bool>(false);
@@ -80,7 +80,7 @@ class _AnimatedSliderState extends State<AnimatedSlider> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: widget.height,
+      height: MediaQuery.of(context).size.height,
       child: LayoutBuilder(
         builder: (context, constraints) {
           double sliderWidth = constraints.maxWidth;

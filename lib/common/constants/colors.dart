@@ -34,7 +34,7 @@ class AppTheme {
         headlineMedium:TextStyle(color: Color(0xFF4D4D4D)) ,
         headlineSmall:TextStyle(color: Color(0xFF4D4D4D)) ,
       ),
-      bottomAppBarColor: onPrimaryDark,
+      // bottomAppBarColor: onPrimaryDark,
       scaffoldBackgroundColor: const Color(0xFFF5F3F3),
       appBarTheme: const AppBarTheme(backgroundColor: Color(0xFFF5F3F3), foregroundColor: primaryDark, elevation: 0));
 
@@ -55,7 +55,7 @@ class AppTheme {
       }),
       cardColor: const Color(0xFFECEBEB),
       primaryColor: const Color(0xffe56260),
-      bottomAppBarColor: onSurfaceDark,
+      // bottomAppBarColor: onSurfaceDark,
       scaffoldBackgroundColor: const Color(0xff121212),
       appBarTheme: const AppBarTheme(
           systemOverlayStyle: SystemUiOverlayStyle(statusBarBrightness: Brightness.light, statusBarIconBrightness: Brightness.light),

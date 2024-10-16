@@ -123,7 +123,7 @@ class _LoginViewStateP extends State<LoginViewPage> {
             padding: EdgeInsets.symmetric(horizontal: 10.w),
             child: Container(
               margin: EdgeInsets.only(top: 20.w),
-              width: Get.width,
+              width: MediaQuery.of(context).size.width,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -131,7 +131,7 @@ class _LoginViewStateP extends State<LoginViewPage> {
                     children: [
                       SvgPicture.asset(
                         AppIcons.loginTop,
-                        width: Get.width,
+                        width: MediaQuery.of(context).size.width,
                         fit: BoxFit.fitWidth,
                       ),
                       SafeArea(
@@ -163,7 +163,7 @@ class _LoginViewStateP extends State<LoginViewPage> {
                           child: Container(
                             height: 88.w,
                             alignment: Alignment.center,
-                            width: Get.width,
+                            width: MediaQuery.of(context).size.width,
                             margin: EdgeInsets.symmetric(vertical: 40.w, horizontal: 5.w),
                             decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(20.w)),
                             child: Text(
@@ -235,8 +235,8 @@ class _LoginViewStateP extends State<LoginViewPage> {
             child: GestureDetector(
               child: Container(
                 color: Theme.of(context).cardColor.withOpacity(.5),
-                width: Get.width,
-                height: Get.height,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -280,7 +280,7 @@ class _LoginViewStateP extends State<LoginViewPage> {
                 children: [
                   SvgPicture.asset(
                     AppIcons.loginTop,
-                    width: Get.width,
+                    width: MediaQuery.of(context).size.width,
                     fit: BoxFit.fitWidth,
                   ),
                   SafeArea(
@@ -296,7 +296,7 @@ class _LoginViewStateP extends State<LoginViewPage> {
                 padding: EdgeInsets.symmetric(horizontal: 10.w),
                 child: Container(
                   margin: EdgeInsets.only(top: 20.w),
-                  width: Get.width,
+                  width: MediaQuery.of(context).size.width,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
@@ -320,7 +320,7 @@ class _LoginViewStateP extends State<LoginViewPage> {
                               child: Container(
                                 height: 88.w,
                                 alignment: Alignment.center,
-                                width: Get.width,
+                                width: MediaQuery.of(context).size.width,
                                 margin: EdgeInsets.symmetric(vertical: 40.w, horizontal: 5.w),
                                 decoration: BoxDecoration(color: Theme.of(context).primaryColor, borderRadius: BorderRadius.circular(20.w)),
                                 child: Text(
@@ -394,8 +394,8 @@ class _LoginViewStateP extends State<LoginViewPage> {
             child: GestureDetector(
               child: Container(
                 color: Theme.of(context).cardColor.withOpacity(.5),
-                width: Get.width,
-                height: Get.height,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
                 alignment: Alignment.center,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,

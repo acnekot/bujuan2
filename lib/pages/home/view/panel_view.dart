@@ -34,17 +34,17 @@ class PanelView extends GetView<Home> {
       },
       color: Colors.transparent,
       body: _buildDefaultBody(context),
-      // panel: Container(
-      //   width: 750.w,
-      //   padding: EdgeInsets.only(top: controller.panelMobileMinSize + controller.panelAlbumPadding * 2 + bottomHeight),
-      //   child: Obx(() => IndexedStack(
-      //         index: controller.selectIndex.value,
-      //         children: controller.pages,
-      //       )),
-      // ),
+      panelBuilder:()=> Container(
+        width: 750.w,
+        padding: EdgeInsets.only(top: controller.panelMobileMinSize + controller.panelAlbumPadding * 2 + bottomHeight),
+        child: Obx(() => IndexedStack(
+              index: controller.selectIndex.value,
+              children: controller.pages,
+            )),
+      ),
       header: _buildBottom(bottomHeight, context),
       boxShadow: const [BoxShadow(blurRadius: 8.0, color: Color.fromRGBO(0, 0, 0, 0.05))],
-      maxHeight: Get.height - (controller.panelMobileMinSize + MediaQuery.of(context).padding.top + controller.panelAlbumPadding * 4),
+      maxHeight: MediaQuery.of(context).size.height - (controller.panelMobileMinSize + MediaQuery.of(context).padding.top + controller.panelAlbumPadding * 4),
       minHeight: controller.panelMobileMinSize + controller.panelAlbumPadding * 2 + bottomHeight,
     ));
   }
@@ -232,7 +232,7 @@ class PanelView extends GetView<Home> {
 
   Widget _buildDefaultBody(BuildContext context) {
     return SizedBox(
-      height: Get.height,
+      height: MediaQuery.of(context).size.height,
       child: Stack(
         children: [
           Obx(() => Visibility(
@@ -343,7 +343,7 @@ class PanelViewL extends GetView<Home> {
 
   Widget _buildDefaultBody(BuildContext context) {
     return SizedBox(
-      height: Get.height,
+      height: MediaQuery.of(context).size.height,
       child: Stack(
         children: [
           Obx(() => Visibility(
@@ -351,8 +351,8 @@ class PanelViewL extends GetView<Home> {
                 child: SimpleExtendedImage(
                   Home.to.mediaItem.value.extras?['image'] ?? '',
                   fit: BoxFit.cover,
-                  width: Get.width,
-                  height: Get.height,
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
                 ),
               )),
           Obx(() => AnimatedContainer(

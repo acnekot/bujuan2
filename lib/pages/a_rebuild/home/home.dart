@@ -40,65 +40,65 @@ class HomePage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final newSong = ref.watch(newSongList);
-    // return Scaffold(
-    //   appBar: AppBar(
-    //     centerTitle: false,
-    //     leading: IconButton(
-    //         onPressed: () {
-    //           SystemChrome.setEnabledSystemUIMode(
-    //             SystemUiMode.edgeToEdge,
-    //           );
-    //         },
-    //         icon: SimpleExtendedImage(
-    //           'http://p1.music.126.net/bfipOCObq0KmuW4m0o31mQ==/109951168928616871.jpg?param=180y180',
-    //           borderRadius: BorderRadius.circular(90.w),
-    //           width: 75.w,
-    //           height: 75.w,
-    //         )),
-    //     title: const Text(
-    //       '晚上好',
-    //       style: TextStyle(fontWeight: FontWeight.w600),
-    //     ),
-    //     actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.settings))],
-    //   ),
-    //   // body: newSong.when(
-    //   //   data: (data) {
-    //   //     return ListView.builder(
-    //   //       padding: EdgeInsets.only(left: 30.w, right: 30.w, bottom: 100.w),
-    //   //       itemBuilder: (context, index) => GestureDetector(
-    //   //         child: Padding(
-    //   //           padding: EdgeInsets.symmetric(vertical: 20.w),
-    //   //           child: Row(
-    //   //             children: [
-    //   //               SimpleExtendedImage(
-    //   //                 '${data[index].coverImgUrl}?param=200y200',
-    //   //                 cacheWidth: 200,
-    //   //                 width: 90.w,
-    //   //                 height: 90.w,
-    //   //               ),
-    //   //               Padding(padding: EdgeInsets.symmetric(horizontal: 10.w)),
-    //   //               Expanded(
-    //   //                 child: Text(data[index].name ?? ''),
-    //   //               )
-    //   //             ],
-    //   //           ),
-    //   //         ),
-    //   //         onTap: () {
-    //   //           context.go('/playlist', extra: data[index]);
-    //   //         },
-    //   //       ),
-    //   //       itemCount: data.length,
-    //   //     );
-    //   //   },
-    //   //   loading: () => const Center(
-    //   //     child: CircularProgressIndicator(),
-    //   //   ),
-    //   //   error: (error, stack) => Center(
-    //   //     child: Text('Error: $error'),
-    //   //   ),
-    //   // ),
-    // );
-    return Container();
+    return Scaffold(
+      appBar: AppBar(
+        centerTitle: false,
+        leading: IconButton(
+            onPressed: () {
+              SystemChrome.setEnabledSystemUIMode(
+                SystemUiMode.edgeToEdge,
+              );
+            },
+            icon: SimpleExtendedImage(
+              'http://p1.music.126.net/bfipOCObq0KmuW4m0o31mQ==/109951168928616871.jpg?param=180y180',
+              borderRadius: BorderRadius.circular(90.w),
+              width: 75.w,
+              height: 75.w,
+            )),
+        title: const Text(
+          '晚上好',
+          style: TextStyle(fontWeight: FontWeight.w600),
+        ),
+        actions: [IconButton(onPressed: () {}, icon: const Icon(Icons.settings))],
+      ),
+      body: newSong.when(
+        data: (data) {
+          return ListView.builder(
+            padding: EdgeInsets.only(left: 30.w, right: 30.w, bottom: 100.w),
+            itemBuilder: (context, index) => GestureDetector(
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 20.w),
+                child: Row(
+                  children: [
+                    SimpleExtendedImage(
+                      '${data[index].coverImgUrl}?param=200y200',
+                      cacheWidth: 200,
+                      width: 90.w,
+                      height: 90.w,
+                    ),
+                    Padding(padding: EdgeInsets.symmetric(horizontal: 10.w)),
+                    Expanded(
+                      child: Text(data[index].name ?? ''),
+                    )
+                  ],
+                ),
+              ),
+              onTap: () {
+                context.go('/playlist', extra: data[index]);
+              },
+            ),
+            itemCount: data.length,
+          );
+        },
+        loading: () => const Center(
+          child: CircularProgressIndicator(),
+        ),
+        error: (error, stack) => Center(
+          child: Text('Error: $error'),
+        ),
+      ),
+    );
+    // return Container();
   }
 
 // audioServeHandler.changeQueueLists(mediaItem ?? [], index: index);
